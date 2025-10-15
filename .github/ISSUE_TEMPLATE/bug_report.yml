@@ -1,0 +1,111 @@
+name: Bug report
+description: Report a reproducible problem in MyStreako
+labels: ['bug', 'triage']
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Short description of the bug.
+      placeholder: 'The 365-day grid fails to render when ...'
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Where does this happen?
+      options:
+        - Web UI
+        - API
+        - Database / RLS / Policies
+        - Build / Tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide exact steps so we can reproduce the issue.
+      placeholder: |
+        1. Go to /app
+        2. Create a habit
+        3. Click "Check-in"
+        4. Observe console error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: "Today's cell should be filled and streak updated."
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened. Include errors/logs if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots / Logs / Network (HAR)
+      description: Attach relevant evidence if available.
+  - type: input
+    id: commit
+    attributes:
+      label: App version / commit hash
+      description: Paste the short commit hash (e.g., `a1b2c3d`).
+      placeholder: 'a1b2c3d'
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS / Browser / Node / Supabase env (local/hosted)
+      placeholder: 'macOS 15 / Chrome 129 / Node 20 / Supabase hosted'
+  - type: dropdown
+    id: regression
+    attributes:
+      label: Regression?
+      options:
+        - Unknown
+        - Yes (worked before)
+        - No (new behavior)
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility / Frequency
+      options:
+        - Always (100%)
+        - Often (50–99%)
+        - Sometimes (10–49%)
+        - Rarely (<10%)
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact / Severity
+      options:
+        - Blocks development
+        - Affects many users
+        - Minor / edge case
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Temporary Workaround
+      description: If any.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Context
+      description: Related issues/PRs or hints that might help.

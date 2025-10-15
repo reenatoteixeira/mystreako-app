@@ -1,0 +1,90 @@
+name: Feature request
+description: Propose a new capability or improvement
+labels: ['feature', 'triage']
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Clear, concise description of the feature.
+      placeholder: 'Add public share link to habit detail page...'
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Motivation
+      description: What user problem does this solve? Why now?
+      placeholder: 'Users cannot easily share long-term progress...'
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Outline the approach, UX notes, and API/UI contracts if known.
+      placeholder: |
+        - Add a read-only share link on /app/habits/:id
+        - Minimal public view with 5-year grid
+        - Backend: RLS policy for public read
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Define what's in and out of scope.
+      placeholder: |
+        In scope:
+        - ...
+        Out of scope:
+        - ...
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      options:
+        - label: Criterion 1
+        - label: Criterion 2
+        - label: Criterion 3
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics / Success
+      description: How will success be measured?
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / Trade-offs
+      description: Performance, security/privacy, DX/UX considerations.
+  - type: textarea
+    id: deps
+    attributes:
+      label: Dependencies
+      description: Related issues/PRs, external services/integrations.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+  - type: dropdown
+    id: breaking
+    attributes:
+      label: Breaking Changes?
+      options:
+        - No
+        - Yes
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Screenshots, references, prior art.

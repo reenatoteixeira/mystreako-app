@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# 🟩 MyStreako
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MyStreako** is a minimal, privacy‑first habit tracker with a GitHub‑style activity grid. Log a single daily
+check‑in per habit, see your streaks at a glance, and choose what’s public or private. Built to make showing up every
+day effortless.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+MyStreako works like a lightweight social layer around habits. Create habits, track daily check‑ins, and (optionally)
+share your progress publicly. Keep your profile private, or showcase selected habits.
 
-## React Compiler
+Future iterations emphasize honest visuals (no vanity metrics), long‑term views, and simple sharing.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## MVP Features
 
-## Expanding the ESLint configuration
+- User authentication and profile pages (Supabase Auth)
+- Create habits with per‑habit visibility (public or private)
+- One daily check‑in per habit (binary), validated in UTC (no duplicates)
+- Dashboard with a 365‑day grid per habit
+- Habit detail page with a 5‑year activity grid
+- Public profile page to view public habits (read‑only)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Future Roadmap
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Streak badges and gentle nudges (no gamification overload)
+- Shareable links with minimal public views
+- CSV export/import of check‑ins
+- Dark mode and accessibility improvements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack (Planned)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- **Frontend:** React, Vite, Tailwind CSS, TypeScript
+- **Database & Auth:** Supabase (Postgres, Auth, Realtime)
+
+## Repo Structure
+
+```text
+mystreako-app/
+├── docs/        # Documentation (entities, user flows, roadmap, contributing, etc.)
+├── src/         # Client application (React + Vite + TS + Tailwind)
+├── .github/     # GitHub workflows and issue/PR templates
+└── README.md    # This file
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+We welcome contributions from friends, interested developers, and the community! See
+our [Contributing Guide](/docs/contributing.md)
+for details on branches, commits, and PR workflow.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- Documentation in docs/ is our source of truth (entities, flows, roadmap).
+- GitHub Project Board maps features and tasks.
+- Contributions always follow the MVP-first principle: no features are added unless the core backlog experience is
+  solid.
+
+---
+
+> “Show up once a day, see the truth in your grid, and let consistency do the rest.”

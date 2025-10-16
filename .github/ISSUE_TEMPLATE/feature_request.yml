@@ -50,9 +50,9 @@ body:
     attributes:
       label: Impact
       options:
-        - Low
-        - Medium
-        - High
+        - 'Low'
+        - 'Medium'
+        - 'High'
     validations:
       required: true
   - type: textarea
@@ -79,8 +79,8 @@ body:
     attributes:
       label: Breaking Changes?
       options:
-        - No
-        - Yes
+        - 'No'
+        - 'Yes (requires migration)'
     validations:
       required: true
   - type: textarea
